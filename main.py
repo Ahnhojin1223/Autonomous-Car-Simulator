@@ -15,7 +15,7 @@ from LiDAR import LiDAR
 def main(auto):
     os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (500, 30)
     _ = (Map1, Map2, Map3, Map4)
-    walls, trophies, parkings, crosswalks, traffic_signs, car = Map1
+    walls, trophies, parkings, crosswalks, traffic_signs, car = Map2
     lidar = LiDAR()
     control = Control()
     database = Database(lidar, control, car)
@@ -39,7 +39,7 @@ if __name__ == "__main__":
             "--auto",
             help="Do not use your keyboard command,\
                  but use pre-defined brain's command.",
-            action="store_true", default=False
+            action="store_true", default=True
         )
     args = parser.parse_args()
     main(args.auto)
